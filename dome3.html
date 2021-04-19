@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="abc"></div>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src='https://unpkg.com/prop-types@15.6/prop-types.js'> </script>
+<script type="text/babel">
+    class Opo extends React.Component{
+        state={ishot:false}
+        render(){
+            const {ishot}=this.state
+            return <h1 onClick={this.obk}>今天天气{ishot?"晴天":"阴天"}</h1>
+        }
+        obk=()=>{
+            //this.setstate({this.state.ishot)
+            const {ishot}=this.state
+            this.setState({ishot:!ishot})
+        }
+    }
+    ReactDOM.render(<Opo/>,document.getElementById('abc'))
+</script>
+</body>
+</html>

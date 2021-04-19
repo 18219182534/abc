@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="abc"></div>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+    class Weather extends React.Component{
+        constructor(props) {
+            super(props);
+            this.state={ishot:false}
+            this.changeWeather=this.changeWeather.bind(this)
+        }
+        render(){
+            const {ishot}=this.state
+            return <h1 onClick={this.changeWeather}>今天天气很{ishot?'炎热':'寒冷'}</h1>
+        }
+        changeWeather(){
+            console.log("abc")
+        }
+    }
+    ReactDOM.render(<Weather/>,document.getElementById('abc'))
+</script>
+
+</body>
+</html>
